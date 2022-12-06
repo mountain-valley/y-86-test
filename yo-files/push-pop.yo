@@ -1,0 +1,10 @@
+0x0000: 30f40001000000000000   | irmovq stack, %rsp
+0x000a: 30f0efbeadde00000000   | irmovq 0xdeadbeef, %rax
+0x0014: a00f                   | pushq %rax
+0x0016: a00f                   | pushq %rax
+0x0018: b01f                   | popq %rcx
+0x001a: b02f                   | popq %rdx
+0x001c: 00                     | halt
+0x001d:                        | .pos 0x100
+0x0100:                        | stack:
+                               | 

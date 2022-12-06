@@ -1,0 +1,12 @@
+nop
+irmovq scratch, %rax
+rrmovq %rax, %rbx
+rmmovq %rbx, 0x8(%rax)
+irmovq 0x9, %rax
+irmovq 0x7fffffffffffffff, %rbx
+addq %rbx, %rax
+xorq %rax, %rax 
+halt
+
+.pos 0xbf0
+scratch:

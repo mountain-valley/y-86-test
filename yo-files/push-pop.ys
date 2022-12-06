@@ -1,0 +1,9 @@
+irmovq stack, %rsp
+irmovq 0xdeadbeef, %rax
+pushq %rax
+pushq %rax
+popq %rcx
+popq %rdx
+halt
+.pos 0x100
+stack:

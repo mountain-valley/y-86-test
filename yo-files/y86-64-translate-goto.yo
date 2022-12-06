@@ -1,0 +1,22 @@
+0x0000:                        | main:
+0x0000: 30f40001000000000000   |   irmovq stack, %rsp
+0x000a: 30f70000000000000000   |   irmovq 0x0, %rdi
+0x0014: 30f60400000000000000   |   irmovq 0x4, %rsi
+0x001e: 802800000000000000     |   call f
+0x0027: 00                     |   halt
+                               | 
+0x0028:                        | f:
+0x0028: 2070                   |   rrmovq %rdi,%rax
+0x002a: 30fa0100000000000000   |   irmovq 0x1,%r10
+0x0034:                        | loop:
+0x0034: 200b                   |   rrmovq %rax,%r11
+0x0036: 616b                   |   subq %rsi,%r11
+0x0038: 754c00000000000000     |   jge end
+0x0041: 60a0                   |   addq %r10,%rax
+0x0043: 703400000000000000     |   jmp loop
+0x004c:                        | end:
+0x004c: 90                     |   ret
+                               | 
+0x004d:                        | .pos 0x100
+0x0100:                        | stack:
+            

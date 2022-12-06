@@ -1,0 +1,21 @@
+main:
+  irmovq stack, %rsp
+  irmovq 0x0, %rdi
+  irmovq 0x4, %rsi
+  call f
+  halt
+
+f:
+  rrmovq %rdi,%rax
+  irmovq 0x1,%r10
+loop:
+  rrmovq %rax,%r11
+  subq %rsi,%r11
+  jge end
+  addq %r10,%rax
+  jmp loop
+end:
+  ret
+
+.pos 0x100
+stack:

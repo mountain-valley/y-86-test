@@ -1,0 +1,5 @@
+0x0000: 30f0adfbcade00000000   | irmovq $0xdecafbad, %rax
+0x000a: 30f311faadde00000000   | irmovq $0xdeadfa11, %rbx
+0x0014: 30f00000000000000000   | irmovq $0x00000000, %rax
+0x001e: 00                     | halt
+                               | 

@@ -1,0 +1,17 @@
+0x0000: 30f60500000000000000   | irmovq $5, %rsi
+0x000a: 30f00c00000000000000   | irmovq $12, %rax
+0x0014: 6060                   | addq %rsi, %rax      # 12 + 5 = 17
+                               | 
+0x0016: 30f7fbffffffffffffff   | irmovq $-5, %rdi
+0x0020: 30f1f4ffffffffffffff   | irmovq $-12, %rcx
+0x002a: 6071                   | addq %rdi, %rcx      # -12 + -5 = -17 (SF)
+                               | 
+0x002c: 30f20000000000000080   | irmovq $0x8000000000000000, %rdx
+0x0036: 6022                   | addq %rdx, %rdx     # Tmin + Tmin = 0 (ZF, OF)
+                               | 
+0x0038: 30f3ffffffffffffff7f   | irmovq $0x7fffffffffffffff, %rbx
+0x0042: 6033                   | addq %rbx, %rbx     # Tmax + Tmax = -2 (SF, OF)
+                               | 
+0x0044: 00                     | halt
+                               | 
+
